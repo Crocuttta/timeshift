@@ -45,6 +45,9 @@ def get_show_menu():
 
 
 def find_city():
+    '''
+    Поиск города и информации о его времени с помощью abstractapi.com.
+    '''
     city_name = input('Введите имя города: ')  
     city_data = requests.get(ABSTRACT_API_URL + city_name).json()
     if not city_data:
