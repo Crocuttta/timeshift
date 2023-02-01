@@ -13,9 +13,15 @@
             </form>
         </div>
         {% comment %} Вывод информации о городе {% endcomment %}
-        <div>
-        {{name}}:{{gmt_offset}}
-        </div>
+        {% if error %}
+          <div>
+            {{error}}
+          </div>
+        {% elif name %}
+          <div>
+            {{name}}:{{local_time}}
+          </div>    
+        {% endif %}        
     </body>
 
 </html>
