@@ -51,7 +51,8 @@ class Abstractapi(Provider):
         '''
         
         city_data = requests.get(self.ABSTRACT_API_URL + city_name).json()
-        if not city_data:
+        print('>>>> ', city_data)
+        if not city_data or city_data.get('error', False):
             return None       
         print('Текущее время: ', self.get_local_time(city_data['gmt_offset']))
         return {
